@@ -1,0 +1,1072 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Ruby - Credit Europe Bank</title>
+
+		<meta name="description" content="Ruby Presentation for IT-ADD">
+		<meta name="author" content="Tayfun Biyikoglu">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/simple.css" id="theme">
+		<link rel="stylesheet" href="css/custom.css">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/tomorrow-night-bright.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<div class="center">
+						<img src="images/ceb.jpeg" alt="ceb" >
+					</div>
+    			<div class="center">
+    				<img src="images/logo.gif" alt="ruby_logo" >
+    			</div>
+					<br>
+					<p class="center">
+						<strong>Tayfun Biyikoglu</strong>
+					</p>
+					<p class="center">
+						<small>Application Architect</small>
+					</p>
+					<p class="center">
+						<small>IT - ADD</small>
+					</p>
+
+				</section>
+				<!-- <section>
+
+					<p class="heading">Definition</p>
+
+					<p>A dynamic, open source programming language with a focus on simplicity and productivity. It has an elegant syntax that is natural to read and easy to write.</p>
+				<br>
+					<p>Ruby supports multiple programming paradigms, including functional, object oriented and imperative. It also has a dynamic type system and automatic memory management</p>
+
+				</section> -->
+
+				<section>
+					<p class="heading">Timeline: 1993 to 2000</p>
+					<br><br>
+					<ul>
+						<img src="images/matz.jpeg" alt="ruby_logo" class="float_right">
+
+						<li>Created in 1993 by Yukihiro "Matz" Matsumoto</li>
+						<li>Was popular in Japan but unknown else where</li>
+						<li>All documentation is written in japanese</li>
+						</ul>
+
+				</section>
+
+				<section>
+					<p class="heading">Timeline: 2000 to 2004</p>
+					<br>
+					<ul>
+						<img src="images/pickaxe.jpeg" alt="pickaxe" class="float_right">
+						<li>First English language book published in 2000</li>
+        		<li>A lot of interest in the agile development community</li>
+        		<li>Most of the writers of Agile manifesto are Rubyists<br>(Martin Fowler, Robert C. Martin, Dave Thomas, Andrew Hunt)
+        		</li>
+						</ul>
+						<br><br>
+						<div class="center"><a href="http://agilemanifesto.org/" target="_blank">Agile manifesto</a></div>
+				</section>
+
+				<section>
+					<p class="heading">Timeline: 2004 to today</p>
+					<br>
+					<ul>
+						<img src="images/rails.jpeg" alt="rails" class="float_right">
+						<li>The Ruby On Rails framework made Ruby popular</li>
+        		<li>Amazon, BBC, Cisco, CNET, IBM, JP Morgan, NASA, Yahoo and Apple</li>
+        		<li>Scribd (70 million readers each month)</li>
+        		<li>Groupon (38.5 million subscribers in North America)</li>
+        		<li>Basecamp (millions of users)</li>
+        		<li>Github (3 millions users, 5 millions repositories)</li>
+					</ul>
+						</section>
+
+
+
+				<!-- Example of nested vertical slides -->
+				<section>
+					<section>
+						<p class="heading">Marketing Before Technical Stuff</p>
+						<img src="images/github_languages.png" alt="github_languages" >
+						<br><br>
+						<div class="center"><a href="https://github.com/languages" target="_blank">Github Languages</a></div>
+					</section>
+					<section>
+						<p class="heading">Marketing Before Technical Stuff</p>
+						<img src="images/survey-1.png" alt="survey-1" >
+						<div class="center"><a href="http://martinfowler.com/articles/rubyAtThoughtWorks.html" target="_blank">Ruby at ThoughtWorks - Martin Fowler</a></div>
+					</section>
+					<section>
+						<p class="heading">Marketing Before Technical Stuff</p>
+						<img src="images/survey-2.png" alt="survey-2" >
+						</section>
+				</section>
+
+				<section>
+					<p class="heading">Ruby Language</p>
+						<p>A dynamic, open source programming language with a focus on simplicity and productivity. It has an elegant syntax that is natural to read and easy to write.</p>
+
+					<img src="images/influenced.jpeg" alt="influenced" >
+
+				<blockquote>I always thought Smalltalk would beat Java. I just didn't know if would be called 'Ruby' when it did so.</blockquote>Kent Back
+					 </section>
+
+				<section>
+					<p class="heading">Similarities with Java</p>
+					<ul>
+						<li>Runs on a virtual machine</li>
+        		<li>Is Garbage collected</li>
+        		<li>is object oriented</li>
+					</ul>
+					</section>
+
+					<section>
+					<p class="heading">Differences with Java</p>
+					<ul>
+						<li>Everything is an object</li>
+					</ul>
+					<div class="fragment">
+						<pre><code contenteditable style="font-size: 18px; margin-top: 20px;">string = String.valueOf(1);
+						</code></pre>
+						<pre><code contenteditable style="font-size: 18px; margin-top: 20px;">string = 1.to_s()
+						</code></pre>
+					</div>
+					<div class="fragment">
+						<ul>
+											<li>Paranthesess are optional</li>
+										</ul>
+											<pre><code contenteditable style="font-size: 18px; margin-top: 20px;">
+string = 1.to_s
+
+puts "Tayfun"
+
+#Method definition
+def greet name
+  puts "Hello #{name}"
+end
+
+#Method calling
+greet "Tayfun"
+
+											</code></pre></div>
+
+					</section>
+<section>
+					<p class="heading">Differences with Java</p>
+					<ul>
+						<li>Many things you would expect to be keywords are actually methods</li>
+					</ul>
+					<div class="fragment">
+						<pre><code contenteditable style="font-size: 18px; margin-top: 20px;">
+throw new IllegalArgumentException("Ooops")
+
+raise TypeError.new("Ooops")
+
+List< String> list = new ArrayList< String>();
+
+list = Array.new
+
+						</code></pre>
+					</section>
+
+				<section>
+
+			<p class="heading">Interactive Ruby Shell (a REPL)</p>
+
+					<div class="fragment">
+						<pre><code class = "ruby"  contenteditable style="font-size: 18px; margin-top: 20px;">
+irb --simple-promt
+
+1+2
+
+puts "Tayfun"
+
+def multiple_by_2(param)
+  param * 2
+end
+
+multiple_by_2(5)
+
+						</code></pre>
+					</section>
+
+	<section>
+
+			<p class="heading">Everything is an object</p>
+					<div class="fragment">
+						<pre><code class = "ruby" contenteditable style="font-size: 18px; margin-top: 20px;">
+1.class
+
+1+2 == 1.+(2)
+
+"foo".class
+
+nil.class
+
+true.class
+
+String.class
+						</code></pre>
+					</section>
+
+	<section>
+
+			<p class="heading">Everything is an expression</p>
+					<div class="fragment">
+						<pre><code class = "ruby"  contenteditable style="font-size: 18px; margin-top: 20px;">
+x = y = z = 5
+
+[ 3, 1, 7, 0 ].sort.reverse
+
+a = (b = 1 + 2) + 3
+
+
+account_type = "01"
+account_name = if account_type == "01"
+      "Current Account"
+    else
+      "Term Deposit"
+    end
+
+puts account_name
+
+						</code></pre>
+					</section>
+
+<section>
+
+			<p class="heading">Duck Typing in its Nature</p>
+					<br>
+					<div class="fragment">
+						<blockquote> if it walks like a duck and quacks like a duck, it must be a duck. </blockquote>
+					</div>
+					<div class="fragment">
+						<pre><code class = "ruby"  contenteditable style="font-size: 18px; margin-top: 20px;">
+def add_bar(parameter)
+  parameter << "bar"
+end
+
+param = ['foo']
+add_bar param
+
+p param
+
+param = "foo"
+
+add_bar param
+
+p param
+<div class="float_right"><span class="clippy ">
+def add_bar(parameter)
+  parameter << "bar"
+end
+
+param = ['foo']
+add_bar param
+
+p param
+
+param = "foo"
+
+add_bar param
+
+p param
+						</span>
+</div>
+
+						</code></pre>
+					</section>
+
+
+<section>
+
+			<p class="heading">Literal notation everywhere</p>
+
+					<p class="fragment">Array</p>
+					<div class="fragment">
+						<pre><code class = "java"  contenteditable style="font-size: 18px; margin-top: 20px;">
+List&lt;String&gt; list = new ArrayList&lt;String&gt;();
+list.add("foo");
+list.add("bar");
+						</code></pre></div>
+						<div class="fragment">
+						<pre><code class = "ruby"  contenteditable style="font-size: 18px; margin-top: 20px;">
+list = Array.new
+list << 'foo'
+list << 'bar'
+						</code></pre></div>
+						<div class="fragment">
+						<pre><code class = "ruby"  contenteditable style="font-size: 18px; margin-top: 20px;">
+list = ['foo','bar']
+						</code></pre></div>
+<div class="fragment">
+						<pre><code class = "ruby"  contenteditable style="font-size: 18px; margin-top: 20px;">
+list = %w(foo bar)
+						</code></pre></div>
+					</section>
+<section>
+<p class="heading">Literal notation everywhere</p>
+
+					<p class="fragment">Hash</p>
+					<div class="fragment">
+						<pre><code class = "java"  contenteditable style="font-size: 18px; margin-top: 20px;">
+Map&lt;String,String&gt; map = new HashMap&lt;String,String&gt;();
+map.put("foo","one");
+map.put("bar","two");
+						</code></pre></div>
+						<div class="fragment">
+						<pre><code class = "ruby"  contenteditable style="font-size: 18px; margin-top: 20px;">
+map = {'foo' => 'one', 'bar' => 'two'}
+						</code></pre></div>
+						<div class="fragment">
+						<pre><code class = "ruby"  contenteditable style="font-size: 18px; margin-top: 20px;">
+map = {foo: 'one', bar: 'two'}
+						</code></pre></div>
+					</section>
+
+<section>
+<p class="heading">Literal notation everywhere</p>
+					<p class="fragment">Regular Expressions</p>
+					<div class="fragment">
+						<pre><code class = "java"  contenteditable style="font-size: 18px; margin-top: 20px;">
+Pattern pattern = Pattern.compile("some regular expressions")
+Matcher matcher = pattern.matcher(line);
+if(matcher.matches()){
+	doSomething()
+}
+						</code></pre></div>
+						<div class="fragment">
+						<pre><code class = "ruby"  contenteditable style="font-size: 18px; margin-top: 20px;">
+doSomething() if line =~ /some regular expression/
+						</code></pre></div>
+						</section>
+<section>
+<p class="heading">String Interpolation</p>
+					<div class="fragment">
+						<pre><code class = "ruby"  contenteditable style="font-size: 18px; margin-top: 20px;">
+num_of_books = 2
+puts 'I own ' + num_of_books.to_s + ' cars.'
+						</code></pre></div>
+						<div class="fragment">
+						<pre><code class = "ruby"  contenteditable style="font-size: 18px; margin-top: 20px;">
+num_of_books = 2
+puts "I own #{num_of_books} books."
+						</code></pre></div>
+						<div class="fragment">
+						<pre><code class = "ruby"  contenteditable style="font-size: 18px; margin-top: 20px;">
+4.times { |i| puts "Happy Birthday #{i == 2 ? "dear NAME" : "to You"}" }
+<div class="float_right"><span class="clippy ">
+						4.times { |i| puts "Happy Birthday #{i == 2 ? "dear NAME" : "to You"}" }</span>
+</div>
+						</code></pre>
+
+					</div>
+						</section>
+
+<section>
+<p class="heading">Default Arguments</p>
+					<div class="fragment">
+						<pre><code class = "ruby" contenteditable style="font-size: 18px; margin-top: 20px;">
+def greatest_club(param = "Besiktas")
+  puts "En buyuk #{param}"
+end
+greatest_club
+greatest_club "Galatasaray"
+<div class="float_right"><span class="clippy ">
+def greatest_club(param = "Besiktas")
+  puts "En buyuk #{param}"
+end
+greatest_club
+greatest_club "Galatasaray"						</span>
+</div>
+
+						</code></pre></div>
+						<div class="fragment">
+						<pre><code class = "ruby" contenteditable style="font-size: 18px; margin-top: 20px;">
+def greates_clubs(p1 = "Besiktas", *others)
+  print "En buyuk #{p1} "
+  if others.empty?
+    puts "baska buyuk yok"
+  else
+    puts "Sonra : #{others.join(', ')}"
+  end
+end
+greates_clubs
+greates_clubs "Besiktas","Galatasaray","Fenerbahce"
+<div class="float_right"><span class="clippy ">
+def greates_clubs(p1 = "Besiktas", *others)
+  print "En buyuk #{p1} "
+  if others.empty?
+    puts "baska buyuk yok"
+  else
+    puts "Sonra : #{others.join(', ')}"
+  end
+end
+greates_clubs
+greates_clubs "Besiktas","Galatasaray","Fenerbahce"
+</span>
+</div>
+						</code></pre></div>
+						</section>
+
+
+<section>
+<p class="heading">No overflow in Ruby</p>
+					<div class="fragment">
+						<pre><code class = "ruby" contenteditable style="font-size: 18px; margin-top: 20px;">
+number = 1000
+
+4.times do
+  puts "#{number.class}: #{number}"
+  number = number * number
+end
+<div class="float_right"><span class="clippy ">
+number = 1000
+
+4.times do
+  puts "#{number.class}: #{number}"
+  number = number * number
+end
+</span>
+</div>
+
+						</code></pre></div>
+
+						</section>
+
+<section>
+<p class="heading">Ranges</p>
+					<div class="fragment">
+						<pre><code class = "ruby" contenteditable style="font-size: 18px; margin-top: 20px;">
+puts (1..5).class
+a = (1..50)
+p a.first
+p a.end
+
+b = "abc".."def"
+
+p ('a'..'z').to_a
+<div class="float_right"><span class="clippy ">
+puts (1..5).class
+a = (1..50)
+p a.first
+p a.end
+
+b = "abc".."def"
+
+p ('a'..'z').to_a
+
+</span>
+</div>
+
+						</code></pre></div>
+
+						</section>
+
+
+						<section>
+<p class="heading">Open Classes</p>
+					<div class="fragment">
+						<pre><code class = "ruby" contenteditable style="font-size: 18px; margin-top: 20px;">
+class StringUtils
+  def self.encrypt(str)
+    str.tr('a-y','b-z')
+  end
+end
+
+puts StringUtils.encrypt("tayfun")
+						</code></pre></div>
+						<div class="fragment">
+						<pre><code class = "ruby"contenteditable style="font-size: 18px; margin-top: 20px;">
+class String
+  def encrypt
+    self.tr('a-y','b-z')
+  end
+end
+
+puts "tayfun".encrypt
+<div class="float_right"><span class="clippy ">
+class String
+  def encrypt
+    self.tr('a-y','b-z')
+  end
+end
+
+puts "tayfun".encrypt
+</span>
+</div>
+						</code></pre></div>
+						</section>
+
+
+<section>
+<p class="heading">Closures / Blocks</p>
+					<div class="fragment">
+					<p>A closure  is a function or reference to a function together with a referencing environment of that function.</p>
+					<br>
+					<p>A closure—unlike a plain function pointer—allows a function to access those non-local variables even when invoked outside of its immediate lexical scope.</p>
+					</div>
+						</section>
+
+<section>
+<p class="heading">Closures / Blocks</p>
+					<div class="fragment">
+					<pre><code class = "ruby"contenteditable style="font-size: 18px; margin-top: 20px;">
+def n_times(n)
+  lambda { |val| n * val }
+end
+
+two_times = n_times(2)
+three_times = n_times(3)
+
+puts two_times.call(3)
+puts three_times.call(3)
+<div class="float_right"><span class="clippy ">
+def n_times(n)
+  lambda { |val| n * val }
+end
+
+two_times = n_times(2)
+three_times = n_times(3)
+
+puts two_times.call(3)
+puts three_times.call(3)
+</span>
+</div>
+						</code></pre>
+					</div>
+						</section>
+
+<section>
+<p class="heading">Why are Closures important</p>
+
+					<ul>
+						<div class="fragment">
+							<li>Presence of closures in a language completely changes the design of the libraries</li>
+						</div>
+						<div class="fragment">
+							<li>Closure based libraries generally result in significantly less code</li>
+						</div>
+					 </ul>
+						</section>
+<section>
+<p class="heading">Challenge for you</p>
+<strong>BJK.txt</strong>
+<p>Cenk</p>
+<p>Sivok Escude Hilbert Emre<p>
+<p>Niang Holosko Oguzhan Veli Olcay</p>
+<p>Mustafa<p>
+<br>
+<div class="fragment">
+<strong>BJK_Sorted.txt</strong>
+<p>Cenk</p>
+<p>Emre Escude Hilbert Sivok</p>
+<p>Holosko Oguzhan Olcay Niang  Veli</p>
+<p>Mustafa</p>
+</p></div>
+						</section>
+
+<section>
+<p class="heading">Solution</p>
+<div class="fragment">
+					<pre><code class = "java" contenteditable style="font-size: 18px; margin-top: 0px;">
+List&lt;String[]&gt; lines = new ArrayList&lt;String[]&gt;();
+BufferedReader reader  = null;
+
+try {
+  reader = new BufferedReader(new FileReader(&quot;BJK.txt&quot;));
+  while ((line = reader.readLine()) != null) {
+    lines.add(line.split(&quot;\t&quot;))
+  }
+}
+finally{
+  if(reader != null){
+    reader.close();
+  }
+}
+
+//sort
+Collections.sort(lines, new Comparator&lt;String[]&gt;() {
+  public int compare(String[] one, String[] two){
+    return one[1].compareTo(two[1]);
+  }
+}
+
+//write back to file
+BufferedWriter writer = null;
+
+try{
+  writer = new BufferedWriter(new FileWriter(&quot;BJK_Sorted.txt&quot;));
+  for (String[] strings : lines ) {
+    StringBuilder builder = new StringBuilder();
+    for(int i=0; i&lt;strings.length;i++){
+      if(i!=0){
+        builder.append(&quot;\t&quot;);
+      }
+      builder.append(strings[i]);
+    }
+  }
+}
+finally{
+  if(writer != null){
+    writer.close();
+  }
+}
+
+<div class="float_right"><span class="clippy ">
+List<String[]> lines = new ArrayList<String[]>();
+BufferedReader reader  = null;
+
+try {
+  reader = new BufferedReader(new FileReader("BJK.txt"));
+  while ((line = reader.readLine()) != null) {
+    lines.add(line.split("\t"))
+  }
+}
+finally{
+  if(reader != null){
+    reader.close();
+  }
+}
+
+//sort
+Collections.sort(lines, new Comparator<String[]>() {
+  public int compare(String[] one, String[] two){
+    return one[1].compareTo(two[1]);
+  }
+}
+
+//write back to file
+BufferedWriter writer = null;
+
+try{
+  writer = new BufferedWriter(new FileWriter("BJK_Sorted.txt"));
+  for (String[] strings : lines ) {
+    StringBuilder builder = new StringBuilder();
+    for(int i=0; i<strings.length;i++){
+      if(i!=0){
+        builder.append("\t");
+      }
+      builder.append(strings[i]);
+    }
+  }
+}
+finally{
+  if(writer != null){
+    writer.close();
+  }
+}
+
+</span>
+</div>
+						</code></pre>
+					</div>
+					<div class="fragment">
+					<pre>
+<code class = "ruby" contenteditable style="font-size: 18px; margin-top: 0px;">lines = []
+File.foreach('BJK.txt') do |line|
+ lines << line.split
+end
+File.open('BJK_sorted.txt','w+') do |file|
+  lines.each do |e|
+    file.puts e.sort.join("\t")
+  end
+end
+
+												</code></pre>
+					</div>
+
+						</section>
+
+<section>
+<p class="heading">Domain Specific Languages</p>
+<div class="fragment">
+<strong>Best language for writing Domain Specific Language</strong>
+</div>
+<div class="fragment">
+					<pre>
+<code class = "ruby" contenteditable style="font-size: 18px; margin-top: 0px;">
+<div class="float_right"><span class="clippy ">
+	class Turtle
+  def initialize
+    @path = []
+  end
+
+  def right(n=1)
+    @path << "r" * n
+  end
+
+  def up(n=1)
+    @path << "u" * n
+  end
+
+  def left(n=1)
+    @path << "l" * n
+  end
+
+  def down(n=1)
+    @path << "d" * n
+  end
+
+  def path
+    @path.join('-')
+  end
+end
+
+</span></div>
+class Turtle
+  def initialize
+    @path = []
+  end
+
+  def right(n=1)
+    @path << "r" * n
+  end
+
+  def up(n=1)
+    @path << "u" * n
+  end
+
+  def left(n=1)
+    @path << "l" * n
+  end
+
+  def down(n=1)
+    @path << "d" * n
+  end
+
+  def path
+    @path.join('-')
+  end
+end
+
+
+												</code></pre>
+					</div>
+
+						</section>
+
+
+				<section>
+					<h2>Works in Mobile Safari</h2>
+					<p>
+						Try it out! You can swipe through the slides and pinch your way to the overview.
+					</p>
+				</section>
+
+				<section>
+					<h2>Marvelous Unordered List</h2>
+					<ul>
+						<li>No order here</li>
+						<li>Or here</li>
+						<li>Or here</li>
+						<li>Or here</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Fantastic Ordered List</h2>
+					<ol>
+						<li>One is smaller than...</li>
+						<li>Two is smaller than...</li>
+						<li>Three!</li>
+					</ol>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## Markdown support
+
+						For those of you who like that sort of thing. Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
+
+							<section data-markdown>
+							  ## Markdown support
+
+							  For those of you who like that sort of thing.
+							  Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
+							</section>
+					</script>
+				</section>
+
+				<section id="transitions">
+					<h2>Transition Styles</h2>
+					<p>
+						You can select from different transitions, like: <br>
+						<a href="?transition=cube#/transitions">Cube</a> -
+						<a href="?transition=page#/transitions">Page</a> -
+						<a href="?transition=concave#/transitions">Concave</a> -
+						<a href="?transition=zoom#/transitions">Zoom</a> -
+						<a href="?transition=linear#/transitions">Linear</a> -
+						<a href="?transition=fade#/transitions">Fade</a> -
+						<a href="?transition=none#/transitions">None</a> -
+						<a href="?#/transitions">Default</a>
+					</p>
+				</section>
+
+				<section id="themes">
+					<h2>Themes</h2>
+					<p>
+						Reveal.js comes with a few themes built in: <br>
+						<a href="?theme=sky#/themes">Sky</a> -
+						<a href="?theme=beige#/themes">Beige</a> -
+						<a href="?theme=simple#/themes">Simple</a> -
+						<a href="?theme=serif#/themes">Serif</a> -
+						<a href="?theme=night#/themes">Night</a> -
+						<a href="?#/themes">Default</a>
+					</p>
+					<p>
+						<small>
+							* Theme demos are loaded after the presentation which leads to flicker. In production you should load your theme in the <code>&lt;head&gt;</code> using a <code>&lt;link&gt;</code>.
+						</small>
+					</p>
+				</section>
+
+				<section>
+					<section data-state="alert">
+						<h2>Global State</h2>
+						<p>
+							Set <code>data-state="something"</code> on a slide and <code>"something"</code>
+							will be added as a class to the document element when the slide is open. This lets you
+							apply broader style changes, like switching the background.
+						</p>
+						<a href="#" class="image navigate-down">
+							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+						</a>
+					</section>
+					<section data-state="blackout">
+						<h2>"blackout"</h2>
+						<a href="#" class="image navigate-down">
+							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+						</a>
+					</section>
+					<section data-state="soothe">
+						<h2>"soothe"</h2>
+						<a href="#" class="image navigate-next">
+							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(-90deg);">
+						</a>
+					</section>
+				</section>
+
+				<section data-state="customevent">
+					<h2>Custom Events</h2>
+					<p>
+						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
+					</p>
+					<pre><code contenteditable style="font-size: 18px; margin-top: 20px;">Reveal.addEventListener( 'customevent', function() {
+	console.log( '"customevent" has fired' );
+} );
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Clever Quotes</h2>
+					<p>
+						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
+						The nice thing about standards is that there are so many to choose from</q> and block:
+					</p>
+					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
+						For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
+						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.
+					</blockquote>
+				</section>
+
+				<section>
+					<h2>Pretty Code</h2>
+					<pre><code contenteditable>
+function linkify( selector ) {
+  if( supports3DTransforms ) {
+
+    var nodes = document.querySelectorAll( selector );
+
+    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
+      var node = nodes[i];
+
+      if( !node.className ) ) {
+        node.className += ' roll';
+      }
+    };
+  }
+}
+					</code></pre>
+					<p>Courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
+				</section>
+
+				<section>
+					<h2>Intergalactic Interconnections</h2>
+					<p>
+						You can link between slides internally,
+						<a href="#/2/3">like this</a>.
+					</p>
+				</section>
+
+				<section>
+					<section>
+						<h2>Fragmented Views</h2>
+						<p>Hit the next arrow...</p>
+						<p class="fragment">... to step through ...</p>
+						<ol>
+							<li class="fragment"><code>any type</code></li>
+							<li class="fragment"><em>of view</em></li>
+							<li class="fragment"><strong>fragments</strong></li>
+						</ol>
+
+						<aside class="notes">
+							This slide has fragments which are also stepped through in the notes window.
+						</aside>
+					</section>
+					<section>
+						<h2>Fragment Styles</h2>
+						<p>There's a few styles of fragments, like:</p>
+						<p class="fragment grow">grow</p>
+						<p class="fragment shrink">shrink</p>
+						<p class="fragment roll-in">roll-in</p>
+						<p class="fragment fade-out">fade-out</p>
+						<p class="fragment highlight-red">highlight-red</p>
+						<p class="fragment highlight-green">highlight-green</p>
+						<p class="fragment highlight-blue">highlight-blue</p>
+					</section>
+				</section>
+
+				<section>
+					<h2>Spectacular image!</h2>
+					<a class="image" href="http://lab.hakim.se/meny/" target="_blank">
+						<img width="320" height="299" src="http://s3.amazonaws.com/hakim-static/portfolio/images/meny.png" alt="Meny">
+					</a>
+				</section>
+
+				<section>
+					<h2>Export to PDF</h2>
+					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, below is an example that's been uploaded to SlideShare.</p>
+					<iframe id="slideshare" src="http://www.slideshare.net/slideshow/embed_code/13872948" width="455" height="356" style="margin:0;overflow:hidden;border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen> </iframe>
+					<script>
+						document.getElementById('slideshare').attributeName = 'allowfullscreen';
+					</script>
+				</section>
+
+				<section>
+					<h2>Take a Moment</h2>
+					<p>
+						Press b or period on your keyboard to enter the 'paused' mode. This mode is helpful when you want to take distracting slides off the screen
+						during a presentation.
+					</p>
+				</section>
+
+				<section>
+					<h2>Stellar Links</h2>
+					<ul>
+						<li><a href="https://github.com/hakimel/reveal.js">Source code on GitHub</a></li>
+						<li><a href="http://hakim.se/projects/reveal-js">Leave feedback on my site</a></li>
+						<li><a href="http://twitter.com/hakimel">Follow me on Twitter</a></li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>It's free</h2>
+					<p>
+						reveal.js and <a href="http://www.rvl.io">rvl.io</a> are entirely free but if you'd like to support the projects you can donate below.
+						Donations will go towards hosting and domain costs.
+					</p>
+					<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+						<input type="hidden" name="cmd" value="_donations">
+						<input type="hidden" name="business" value="hakim.elhattab@gmail.com">
+						<input type="hidden" name="lc" value="US">
+						<input type="hidden" name="item_name" value="reveal.js / rvl.io">
+						<input type="hidden" name="no_note" value="0">
+						<input type="hidden" name="currency_code" value="USD">
+						<input type="hidden" name="bn" value="PP-DonationsBF:btn_donate_LG.gif:NonHostedGuest">
+						<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+					</form>
+				</section>
+
+				<section>
+					<h1>THE END</h1>
+					<h3>BY Hakim El Hattab / hakim.se</h3>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+		<script src="js/jquery-1.7.2.min.js"></script>
+		<script src="plugin/clippy/jquery.clippy.min.js" type="text/javascript"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+<script type="text/javascript">
+		$(document).ready(function()
+		{
+			/* Clippy location (hosted on Github) */
+			var clippy_swf = "plugin/clippy/clippy.swf";
+
+			/* Get all of this boring stuff out of the way... */
+			$('#pastebin').click(function(evt)
+			{
+				$('#pastebin').removeClass('empty');
+				$('#pastebin')[0].select();
+				return false;
+			});
+
+			/* Set up the clippies! */
+			$('.clippy').clippy({ clippy_path: clippy_swf , width: 20, height: 20});
+
+			$('#change_me').keyup(function()
+			{
+				$('#change_this').html('').clippy({'text': $(this).val(), clippy_path: clippy_swf });
+			}).keyup();
+		});
+	</script>
+	</body>
+</html>

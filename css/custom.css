@@ -1,0 +1,16 @@
+.center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.float_right {
+  float: right;
+}
+.float_left {
+  float: left;
+}
+ .heading {
+  color:#933;
+  border-bottom: 3px solid #888;
+  font-weight: bold;
+ }
