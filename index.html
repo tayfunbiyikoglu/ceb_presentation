@@ -66,7 +66,7 @@
 
 				</section> -->
 
-				<section>
+				<section id="Timeline-1">
 					<p class="heading">Timeline: 1993 to 2000</p>
 					<br><br>
 					<ul>
@@ -79,7 +79,7 @@
 
 				</section>
 
-				<section>
+				<section id="Timeline-2">
 					<p class="heading">Timeline: 2000 to 2004</p>
 					<br>
 					<ul>
@@ -93,7 +93,7 @@
 						<div class="center"><a href="http://agilemanifesto.org/" target="_blank">Agile manifesto</a></div>
 				</section>
 
-				<section>
+				<section id="Timeline-3">
 					<p class="heading">Timeline: 2004 to today</p>
 					<br>
 					<ul>
@@ -111,7 +111,7 @@
 
 				<!-- Example of nested vertical slides -->
 				<section>
-					<section>
+					<section id="Marketing">
 						<p class="heading">Marketing Before Technical Stuff</p>
 						<img src="images/github_languages.png" alt="github_languages" >
 						<br><br>
@@ -128,16 +128,16 @@
 						</section>
 				</section>
 
-				<section>
+				<section id="Definition">
 					<p class="heading">Ruby Language</p>
-						<p>A dynamic, open source programming language with a focus on simplicity and productivity. It has an elegant syntax that is natural to read and easy to write.</p>
+						<p>A dynamic, open source programming language with a focus on simplicity and productivity and developer happiness. It has an elegant syntax that is natural to read and easy to write.</p>
 
 					<img src="images/influenced.jpeg" alt="influenced" >
 
 				<blockquote>I always thought Smalltalk would beat Java. I just didn't know if would be called 'Ruby' when it did so.</blockquote>Kent Back
 					 </section>
 
-				<section>
+				<section id="Similarities">
 					<p class="heading">Similarities with Java</p>
 					<ul>
 						<li>Runs on a virtual machine</li>
@@ -146,7 +146,7 @@
 					</ul>
 					</section>
 
-					<section>
+					<section id="Differences-1">
 					<p class="heading">Differences with Java</p>
 					<ul>
 						<li>Everything is an object</li>
@@ -177,7 +177,7 @@ greet "Tayfun"
 											</code></pre></div>
 
 					</section>
-<section>
+<section id="Differences-2">
 					<p class="heading">Differences with Java</p>
 					<ul>
 						<li>Many things you would expect to be keywords are actually methods</li>
@@ -195,7 +195,7 @@ list = Array.new
 						</code></pre>
 					</section>
 
-				<section>
+				<section id="irb">
 
 			<p class="heading">Interactive Ruby Shell (a REPL)</p>
 
@@ -216,7 +216,7 @@ multiple_by_2(5)
 						</code></pre>
 					</section>
 
-	<section>
+	<section id="Everything-is-object">
 
 			<p class="heading">Everything is an object</p>
 					<div class="fragment">
@@ -235,7 +235,7 @@ String.class
 						</code></pre>
 					</section>
 
-	<section>
+	<section id="Everything-is-expression">
 
 			<p class="heading">Everything is an expression</p>
 					<div class="fragment">
@@ -259,7 +259,7 @@ puts account_name
 						</code></pre>
 					</section>
 
-<section>
+<section id="DuckTyping">
 
 			<p class="heading">Duck Typing in its Nature</p>
 					<br>
@@ -304,7 +304,7 @@ p param
 					</section>
 
 
-<section>
+<section id="Literal-notation-array">
 
 			<p class="heading">Literal notation everywhere</p>
 
@@ -330,7 +330,7 @@ list = ['foo','bar']
 list = %w(foo bar)
 						</code></pre></div>
 					</section>
-<section>
+<section id="Literal-notation-hash">
 <p class="heading">Literal notation everywhere</p>
 
 					<p class="fragment">Hash</p>
@@ -350,7 +350,7 @@ map = {foo: 'one', bar: 'two'}
 						</code></pre></div>
 					</section>
 
-<section>
+<section id="Literal-notation-regular-expression">
 <p class="heading">Literal notation everywhere</p>
 					<p class="fragment">Regular Expressions</p>
 					<div class="fragment">
@@ -366,7 +366,7 @@ if(matcher.matches()){
 doSomething() if line =~ /some regular expression/
 						</code></pre></div>
 						</section>
-<section>
+<section id="String-interpolation">
 <p class="heading">String Interpolation</p>
 					<div class="fragment">
 						<pre><code class = "ruby"  contenteditable style="font-size: 18px; margin-top: 20px;">
@@ -389,7 +389,7 @@ puts "I own #{num_of_books} books."
 					</div>
 						</section>
 
-<section>
+<section id="Default-arguments">
 <p class="heading">Default Arguments</p>
 					<div class="fragment">
 						<pre><code class = "ruby" contenteditable style="font-size: 18px; margin-top: 20px;">
@@ -436,7 +436,7 @@ greates_clubs "Besiktas","Galatasaray","Fenerbahce"
 						</section>
 
 
-<section>
+<section id="No-overflow">
 <p class="heading">No overflow in Ruby</p>
 					<div class="fragment">
 						<pre><code class = "ruby" contenteditable style="font-size: 18px; margin-top: 20px;">
@@ -460,8 +460,11 @@ end
 
 						</section>
 
-<section>
+<section id="Ranges">
 <p class="heading">Ranges</p>
+<div class="fragment">
+	<p>A range is an object with a start point and an end point.</p>
+</div>
 					<div class="fragment">
 						<pre><code class = "ruby" contenteditable style="font-size: 18px; margin-top: 20px;">
 puts (1..5).class
@@ -490,7 +493,7 @@ p ('a'..'z').to_a
 						</section>
 
 
-						<section>
+						<section id="Open-classes">
 <p class="heading">Open Classes</p>
 					<div class="fragment">
 						<pre><code class = "ruby" contenteditable style="font-size: 18px; margin-top: 20px;">
@@ -525,7 +528,7 @@ puts "tayfun".encrypt
 						</section>
 
 
-<section>
+<section id="Closures-1">
 <p class="heading">Closures / Blocks</p>
 					<div class="fragment">
 					<p>A closure  is a function or reference to a function together with a referencing environment of that function.</p>
@@ -534,7 +537,7 @@ puts "tayfun".encrypt
 					</div>
 						</section>
 
-<section>
+<section id="Closures-2">
 <p class="heading">Closures / Blocks</p>
 					<div class="fragment">
 					<pre><code class = "ruby"contenteditable style="font-size: 18px; margin-top: 20px;">
@@ -563,7 +566,7 @@ puts three_times.call(3)
 					</div>
 						</section>
 
-<section>
+<section id="Closures-3">
 <p class="heading">Why are Closures important</p>
 
 					<ul>
@@ -575,7 +578,7 @@ puts three_times.call(3)
 						</div>
 					 </ul>
 						</section>
-<section>
+<section id="Challenge">
 <p class="heading">Challenge for you</p>
 <strong>BJK.txt</strong>
 <p>Cenk</p>
@@ -592,96 +595,96 @@ puts three_times.call(3)
 </p></div>
 						</section>
 
-<section>
+<section id="Solution">
 <p class="heading">Solution</p>
 <div class="fragment">
 					<pre><code class = "java" contenteditable style="font-size: 18px; margin-top: 0px;">
 List&lt;String[]&gt; lines = new ArrayList&lt;String[]&gt;();
-BufferedReader reader  = null;
+ BufferedReader reader  = null;
+ String line;
+ try {
 
-try {
-  reader = new BufferedReader(new FileReader(&quot;BJK.txt&quot;));
-  while ((line = reader.readLine()) != null) {
-    lines.add(line.split(&quot;\t&quot;))
-  }
-}
-finally{
-  if(reader != null){
-    reader.close();
-  }
-}
-
-//sort
-Collections.sort(lines, new Comparator&lt;String[]&gt;() {
-  public int compare(String[] one, String[] two){
-    return one[1].compareTo(two[1]);
-  }
-}
-
-//write back to file
-BufferedWriter writer = null;
-
-try{
-  writer = new BufferedWriter(new FileWriter(&quot;BJK_Sorted.txt&quot;));
-  for (String[] strings : lines ) {
-    StringBuilder builder = new StringBuilder();
-    for(int i=0; i&lt;strings.length;i++){
-      if(i!=0){
-        builder.append(&quot;\t&quot;);
+       reader = new BufferedReader(new FileReader(&quot;BJK.txt&quot;));
+        while ((line = reader.readLine()) != null) {
+                lines.add(line.split(&quot; &quot;));
+              }
       }
-      builder.append(strings[i]);
+     finally{
+        if(reader != null){
+            reader.close();
+          }
+      }
+  Iterator it = lines.iterator();
+
+   while (it.hasNext()) {
+       String[] names = (String[]) it.next();
+        Arrays.sort(names);
     }
-  }
-}
-finally{
-  if(writer != null){
-    writer.close();
-  }
-}
+
+    //write back to file
+   BufferedWriter writer = null;
+
+    try{
+       writer = new BufferedWriter(new FileWriter(&quot;BJK_Sorted.txt&quot;));
+       StringBuffer bf = new StringBuffer();
+       for (String[] strings : lines ) {
+           for (String s : Arrays.asList(strings)){
+                     bf.append(s + &quot;\t&quot;);
+                }
+                  bf.append(&quot;\n&quot;);
+            }
+       writer.write(bf.toString());
+         }
+        finally{
+           if(writer != null){
+             writer.close();
+            }
+        }
 
 <div class="float_right"><span class="clippy ">
 List<String[]> lines = new ArrayList<String[]>();
 BufferedReader reader  = null;
-
+String line;
 try {
-  reader = new BufferedReader(new FileReader("BJK.txt"));
-  while ((line = reader.readLine()) != null) {
-    lines.add(line.split("\t"))
-  }
-}
-finally{
-  if(reader != null){
-    reader.close();
-  }
-}
 
-//sort
-Collections.sort(lines, new Comparator<String[]>() {
-  public int compare(String[] one, String[] two){
-    return one[1].compareTo(two[1]);
-  }
-}
+              reader = new BufferedReader(new FileReader("BJK.txt"));
+              while ((line = reader.readLine()) != null) {
+                lines.add(line.split(" "));
+              }
+            }
+            finally{
+              if(reader != null){
+                reader.close();
+              }
+            }
+            Iterator it = lines.iterator();
 
-//write back to file
-BufferedWriter writer = null;
+            while (it.hasNext()) {
+                  String[] names = (String[]) it.next();
+                  Arrays.sort(names);
+            }
 
-try{
-  writer = new BufferedWriter(new FileWriter("BJK_Sorted.txt"));
-  for (String[] strings : lines ) {
-    StringBuilder builder = new StringBuilder();
-    for(int i=0; i<strings.length;i++){
-      if(i!=0){
-        builder.append("\t");
-      }
-      builder.append(strings[i]);
-    }
-  }
-}
-finally{
-  if(writer != null){
-    writer.close();
-  }
-}
+            //write back to file
+            BufferedWriter writer = null;
+
+            try{
+              writer = new BufferedWriter(new FileWriter("BJK_Sorted.txt"));
+              StringBuffer bf = new StringBuffer();
+              for (String[] strings : lines ) {
+                  for (String s : Arrays.asList(strings))
+                  {
+                     bf.append(s + "\t");
+                  }
+                  bf.append("\n");
+                }
+            writer.write(bf.toString());
+            }
+            finally{
+              if(writer != null){
+                writer.close();
+              }
+            }
+
 
 </span>
 </div>
@@ -704,7 +707,7 @@ end
 
 						</section>
 
-<section>
+<section id="Dsl">
 <p class="heading">Domain Specific Languages</p>
 <div class="fragment">
 <strong>Best language for writing Domain Specific Language</strong>
@@ -772,21 +775,34 @@ end
 
 						</section>
 
+<section id="Rubygems">
+<p class="heading">Ruby Gems - Centralized Package management</p>
 
+<p>
+	RubyGems is a package manager for the Ruby that provides a standard format for distributing Ruby programs and libraries(gems), a tool designed to easily manage the installation of gems, and a server for distributing them.
+</p>
 
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						<a href="?transition=cube#/transitions">Cube</a> -
-						<a href="?transition=page#/transitions">Page</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a> -
-						<a href="?transition=linear#/transitions">Linear</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?#/transitions">Default</a>
-					</p>
-				</section>
+<div class="fragment">
+					<pre>
+<code class = "ruby" contenteditable style="font-size: 18px; margin-top: 0px;">gem install nokogiri
+
+gem list
+
+gem search STRING --remote
+
+</code></pre>
+
+<br>
+<div class="fragment">
+<div class="center"><a href="http://rubygems.org/" target="_blank">Ruby Gems</a></div>
+</div>
+
+<div class="fragment">
+<div class="center"><a href="https://www.ruby-toolbox.com/" target="_blank">Ruby Toolbox</a></div>
+</div>
+
+						</section>
+
 
 				<section id="themes">
 					<h2>Themes</h2>
@@ -803,8 +819,9 @@ end
 					</p>
 				</section>
 
-				<section>
+				<section id="End">
 					<h1>THE END</h1>
+					<h2>Thans for listening</h2>
 					<h3>Tayfun Biyikoglu</h3>
 				</section>
 
