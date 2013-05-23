@@ -323,7 +323,7 @@ list << 'bar'
 						</code></pre></div>
 						<div class="fragment">
 						<pre><code class = "ruby"  contenteditable style="font-size: 18px; margin-top: 20px;">
-list = ['foo','bar']
+list = ['foo','bar', 1, true]
 						</code></pre></div>
 <div class="fragment">
 						<pre><code class = "ruby"  contenteditable style="font-size: 18px; margin-top: 20px;">
@@ -371,7 +371,7 @@ doSomething() if line =~ /some regular expression/
 					<div class="fragment">
 						<pre><code class = "ruby"  contenteditable style="font-size: 18px; margin-top: 20px;">
 num_of_books = 2
-puts 'I own ' + num_of_books.to_s + ' cars.'
+puts 'I own ' + num_of_books.to_s + ' books.'
 						</code></pre></div>
 						<div class="fragment">
 						<pre><code class = "ruby"  contenteditable style="font-size: 18px; margin-top: 20px;">
@@ -579,13 +579,15 @@ puts three_times.call(3)
 					 </ul>
 						</section>
 <section id="Challenge">
-<p class="heading">Challenge for you</p>
-<strong>BJK.txt</strong>
+<p class="heading">Challenge: Programmer's Taboo</p>
+<div class="fragment"><strong>BJK.txt</strong>
 <p>Cenk</p>
 <p>Sivok Escude Hilbert Emre<p>
 <p>Niang Holosko Oguzhan Veli Olcay</p>
 <p>Mustafa<p>
-<br>
+</div><div class="fragment">
+	<p class="blue">Sort each line in alphabetic order </p>
+</div>
 <div class="fragment">
 <strong>BJK_Sorted.txt</strong>
 <p>Cenk</p>
@@ -594,6 +596,19 @@ puts three_times.call(3)
 <p>Mustafa</p>
 </p></div>
 						</section>
+
+<section id="Taboo">
+<p class="heading">Here is the taboo part</p>
+<p><strong>Below words are forbidden</strong></p>
+<ul>
+	<div class="fragment"><li class="red">Stackoverflow</li></div>
+	<div class="fragment"><li class="red">Documentation</li></div>
+	<div class="fragment"><li class="red">Internet</li></div>
+</ul>
+<br><br>
+	<div class="fragment"><p>And let's do it in 10 minutes</p></div>
+						</section>
+
 
 <section id="Solution">
 <p class="heading">Solution</p>
@@ -696,9 +711,9 @@ try {
 File.foreach('BJK.txt') do |line|
  lines << line.split
 end
-File.open('BJK_sorted.txt','w+') do |file|
-  lines.each do |e|
-    file.puts e.sort.join("\t")
+File.open('BJK_sorted.txt','w') do |file|
+  lines.each do |line|
+    file.puts line.sort.join(' ')
   end
 end
 
