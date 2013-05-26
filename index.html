@@ -188,9 +188,6 @@ throw new IllegalArgumentException("Ooops")
 
 raise TypeError.new("Ooops")
 
-List< String> list = new ArrayList< String>();
-
-list = Array.new
 
 						</code></pre>
 					</section>
@@ -418,7 +415,7 @@ def greates_clubs(p1 = "Besiktas", *others)
   end
 end
 greates_clubs
-greates_clubs "Besiktas","Galatasaray","Fenerbahce"
+greates_clubs "BJK","Galatasaray","Fenerbahce"
 <div class="float_right"><span class="clippy ">
 def greates_clubs(p1 = "Besiktas", *others)
   print "En buyuk #{p1} "
@@ -429,7 +426,7 @@ def greates_clubs(p1 = "Besiktas", *others)
   end
 end
 greates_clubs
-greates_clubs "Besiktas","Galatasaray","Fenerbahce"
+greates_clubs "BJK","Galatasaray","Fenerbahce"
 </span>
 </div>
 						</code></pre></div>
@@ -493,39 +490,6 @@ p ('a'..'z').to_a
 						</section>
 
 
-						<section id="Open-classes">
-<p class="heading">Open Classes</p>
-					<div class="fragment">
-						<pre><code class = "ruby" contenteditable style="font-size: 18px; margin-top: 20px;">
-class StringUtils
-  def self.encrypt(str)
-    str.tr('a-y','b-z')
-  end
-end
-
-puts StringUtils.encrypt("tayfun")
-						</code></pre></div>
-						<div class="fragment">
-						<pre><code class = "ruby"contenteditable style="font-size: 18px; margin-top: 20px;">
-class String
-  def encrypt
-    self.tr('a-y','b-z')
-  end
-end
-
-puts "tayfun".encrypt
-<div class="float_right"><span class="clippy ">
-class String
-  def encrypt
-    self.tr('a-y','b-z')
-  end
-end
-
-puts "tayfun".encrypt
-</span>
-</div>
-						</code></pre></div>
-						</section>
 
 
 <section id="Closures-1">
@@ -606,7 +570,7 @@ puts three_times.call(3)
 	<div class="fragment"><li class="red">Internet</li></div>
 </ul>
 <br><br>
-	<div class="fragment"><p>And let's do it in 10 minutes</p></div>
+	<div class="fragment"><p>And let's do it in 7 minutes</p></div>
 <br><br>
 
 	<div class="fragment"><p class="blue">Any Volunteers?</p></div>
@@ -724,6 +688,149 @@ end
 
 						</section>
 
+	<section id="Open-classes">
+<p class="heading">Open Classes</p>
+					<div class="fragment">
+						<pre><code class = "ruby" contenteditable style="font-size: 18px; margin-top: 20px;">
+class StringUtils
+  def self.encrypt(str)
+    str.tr('a-y','b-z')
+  end
+end
+
+puts StringUtils.encrypt("tayfun")
+						</code></pre></div>
+						<div class="fragment">
+						<pre><code class = "ruby"contenteditable style="font-size: 18px; margin-top: 20px;">
+class String
+  def encrypt
+    self.tr('a-y','b-z')
+  end
+end
+
+puts "tayfun".encrypt
+<div class="float_right"><span class="clippy ">
+class String
+  def encrypt
+    self.tr('a-y','b-z')
+  end
+end
+
+puts "tayfun".encrypt
+</span>
+</div>
+						</code></pre></div>
+						</section>
+
+<section id="Modules">
+<p class="heading">Modules</p>
+<p>
+	Modules are a way of grouping together methods, classes, and constants.
+</p>
+<br>
+<div class="fragment"><p> Modules give you two major benefits:</p></div>
+<br>
+<ul>
+<div class = "fragment">
+	<li>Modules provide a namespace and prevent name clashes.</li>
+</div>
+<div class = "fragment">
+	<li>Modules support the mixin facility.</li>
+</div>
+
+</ul>
+
+	<div class="fragment">
+						<pre><code class = "ruby" contenteditable style="font-size: 18px; margin-top: 20px;">module XML
+  class Document
+  end
+end
+
+module PDF
+  class Document
+  end
+end
+
+pdf_document = PDF::Document.new
+xml_document = XML::Document.new
+<div class="float_right"><span class="clippy ">
+module XML
+  class Document
+  end
+end
+
+module PDF
+  class Document
+  end
+end
+
+pdf_document = PDF::Document.new
+xml_document = XML::Document.new</span>
+</div>
+
+						</code></pre></div>
+
+</section>
+
+<section id="Mixins">
+<p class="heading">Modules - Mixins</p>
+<p>
+	Mixins is a way of behaviour sharing
+</p>
+
+	<div class="fragment">
+		<pre><code class = "ruby" contenteditable style="font-size: 18px; margin-top: 20px;">module Persistable
+
+  def self.included(klass)
+    klass.extend ClassMethods
+  end
+
+  def save
+    puts "in save, self is #{self}"
+  end
+
+  module  ClassMethods
+    def find
+      puts "in find"
+      new
+    end
+  end
+
+end
+
+
+class Person
+  include Persistable
+end
+
+<div class="float_right"><span class="clippy ">
+  def self.included(klass)
+    klass.extend ClassMethods
+  end
+
+  def save
+    puts "in save, self is #{self}"
+  end
+
+  module  ClassMethods
+    def find
+      puts "in find"
+      new
+    end
+  end
+end
+
+
+class Person
+  include Persistable
+end
+</span>
+</div>
+
+						</code></pre></div>
+
+</section>
+
 <section id="Dsl">
 <p class="heading">Domain Specific Languages</p>
 <div class="fragment">
@@ -830,6 +937,32 @@ gem search STRING --remote
 
 						</section>
 
+<section id="Rubygems-bundler">
+<p class="heading">Ruby Gems - Bundler</p>
+
+<p>
+	Bundler maintains a consistent environment for ruby applications. It tracks an application's code and the rubygems it needs to run, so that an application will always have the exact gems (and versions) that it needs to run.
+	</p>
+
+<div class="fragment">
+					<pre>
+Gemfile
+<code class = "ruby" contenteditable style="font-size: 18px; margin-top: 0px;">source 'https://rubygems.org'
+gem 'nokogiri'
+gem 'rack', '~>1.1'
+gem 'rspec', :require => 'spec'
+
+</code></pre>
+<div class="fragment">
+					<pre>
+
+<code class = "ruby" contenteditable style="font-size: 18px; margin-top: 0px;">source 'https://rubygems.org'
+bundle install
+</code></pre>
+
+
+						</section>
+
 
 				<section id="themes">
 					<h2>Themes</h2>
@@ -848,8 +981,10 @@ gem search STRING --remote
 
 				<section id="End">
 					<h1>THE END</h1>
-					<h2>Thans for listening</h2>
+					<h2>Thanks for listening</h2>
 					<h3>Tayfun Biyikoglu</h3>
+					<br>
+					<h4>http://tayfunbiyikoglu.github.io/ceb_presentation/</h4>
 				</section>
 
 			</div>
