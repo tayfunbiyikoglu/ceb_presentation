@@ -121,6 +121,9 @@
 						<p class="heading">Marketing Before Technical Stuff</p>
 						<img src="images/survey-1.png" alt="survey-1" >
 						<div class="center"><a href="http://martinfowler.com/articles/rubyAtThoughtWorks.html" target="_blank">Ruby at ThoughtWorks - Martin Fowler</a></div>
+
+						<div class="center"><a href="http://www.infoq.com/presentations/fowler-ruby" target="_blank">3 Years of Real-World Ruby</a></div>
+
 					</section>
 					<section>
 						<p class="heading">Marketing Before Technical Stuff</p>
@@ -134,8 +137,10 @@
 
 					<img src="images/influenced.jpeg" alt="influenced" >
 
-				<blockquote>I always thought Smalltalk would beat Java. I just didn't know if would be called 'Ruby' when it did so.</blockquote>Kent Back
-					 </section>
+				<div class="fragment">
+					<blockquote>I always thought Smalltalk would beat Java. I just didn't know if would be called 'Ruby' when it did so.</blockquote>Kent Back
+					 				</div>
+					</section>
 
 				<section id="Similarities">
 					<p class="heading">Similarities with Java</p>
@@ -777,6 +782,69 @@ xml_document = XML::Document.new</span>
 <p>
 	Mixins is a way of behaviour sharing
 </p>
+
+	<div class="fragment">
+		<pre><code class = "ruby" contenteditable style="font-size: 18px; margin-top: 20px;">module Persistable
+
+  def self.included(klass)
+    klass.extend ClassMethods
+  end
+
+  def save
+    puts "in save, self is #{self}"
+  end
+
+  module  ClassMethods
+    def find
+      puts "in find"
+      new
+    end
+  end
+
+end
+
+
+class Person
+  include Persistable
+end
+
+<div class="float_right"><span class="clippy ">
+  def self.included(klass)
+    klass.extend ClassMethods
+  end
+
+  def save
+    puts "in save, self is #{self}"
+  end
+
+  module  ClassMethods
+    def find
+      puts "in find"
+      new
+    end
+  end
+end
+
+
+class Person
+  include Persistable
+end
+</span>
+</div>
+
+						</code></pre></div>
+
+</section>
+
+<section id="Enumerable">
+<p class="heading">Fantastic module : Enumerable</p>
+<div class="fragment"><p>
+	The Enumerable mixin provides collection classes with several traversal and searching methods, and with the ability to sort
+</p></div>
+
+<div class="fragment">
+	<p>The class must provide a method <strong>each</strong>, which yields successive members of the collection</p>
+</div>
 
 	<div class="fragment">
 		<pre><code class = "ruby" contenteditable style="font-size: 18px; margin-top: 20px;">module Persistable
