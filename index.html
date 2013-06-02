@@ -56,6 +56,16 @@
 					</p>
 
 				</section>
+
+					<section data-state="alert">
+						<h2>Warning!!!</h2>
+						<br><br>
+						<div class="fragment">
+							<h3>The more you learn Ruby...</h3>
+							<br>
+							<div class="fragment"><h3>The less you want to write java</h3></div>
+						</div>
+					</section>
 				<!-- <section>
 
 					<p class="heading">Definition</p>
@@ -847,55 +857,175 @@ end
 </div>
 
 	<div class="fragment">
-		<pre><code class = "ruby" contenteditable style="font-size: 18px; margin-top: 20px;">module Persistable
+		<pre><code class = "ruby" contenteditable style="font-size: 18px; margin-top: 20px;">ar = %w(elma armut muz portakal erik)
 
-  def self.included(klass)
-    klass.extend ClassMethods
-  end
+p ar
+p ar.sort
+# p ar.sort {|x,y| x.length <=> y.length}
 
-  def save
-    puts "in save, self is #{self}"
-  end
+# p ar.partition {|e| e.length > 4}
 
-  module  ClassMethods
-    def find
-      puts "in find"
-      new
-    end
-  end
+# p ar.group_by {|e| e[0]}
 
-end
+# p ar.all? {|e| e.length >1}
+# p ar.any? {|e| e.length >3}
 
+# p ar.each_cons(2) {|e| p e}
 
-class Person
-  include Persistable
-end
+# ar2 = ar.select {|e| e[0] == 'e'}
+
+# p ar2
 
 <div class="float_right"><span class="clippy ">
-  def self.included(klass)
-    klass.extend ClassMethods
-  end
+ ar = %w(elma armut muz portakal erik)
 
-  def save
-    puts "in save, self is #{self}"
-  end
+p ar
+p ar.sort
+# p ar.sort {|x,y| x.length <=> y.length}
 
-  module  ClassMethods
-    def find
-      puts "in find"
-      new
-    end
-  end
-end
+# p ar.partition {|e| e.length > 4}
 
+# p ar.group_by {|e| e[0]}
 
-class Person
-  include Persistable
-end
+# p ar.all? {|e| e.length >1}
+# p ar.any? {|e| e.length >3}
+
+# p ar.each_cons(2) {|e| p e}
+
+# ar2 = ar.select {|e| e[0] == 'e'}
+
+# p ar2
+
 </span>
 </div>
 
 						</code></pre></div>
+
+</section>
+
+<section id="including-Enumerable">
+
+<p class="heading">Enumerable is for everyone</p>
+<div class="fragment">
+		<pre><code class = "ruby" contenteditable style="font-size: 18px; margin-top: 20px;">class Person
+  attr_accessor :age, :name
+  def initialize age, name
+    @age = age
+    @name = name
+  end
+
+  def to_s
+    "Name : #{name} Age: #{age}"
+  end
+
+  def <=> other
+    self.age <=> other.age
+  end
+end
+
+
+class People
+  include Enumerable
+
+  def initialize
+    @list =[]
+  end
+
+  def << item
+    @list << item
+  end
+
+  def each(&block)
+    @list.each(&block)
+  end
+
+end
+
+p1 = Person.new 30, "Tayfun"
+p2 = Person.new 25, "Ahmet"
+p3 = Person.new 28, "Mehmet"
+p4 = Person.new 27, "Demet"
+
+people = People.new
+
+people << p1 << p2 << p3 << p4
+
+# people.each {|p| puts "Name : #{p.name}, Age: #{p.age}"}
+
+# sorted = people.sort {|x,y| x.age <=> y.age}
+
+# sorted.each {|p| puts "Name : #{p.name}, Age: #{p.age}"}
+
+# people.select{|p| p.name[-3..-1] == 'met'}
+
+p people.group_by {|p| p.name[-3..-1]}
+p people.max_by {|p| p.age}
+
+p people.max
+
+
+<div class="float_right"><span class="clippy ">
+ class Person
+  attr_accessor :age, :name
+  def initialize age, name
+    @age = age
+    @name = name
+  end
+
+  def to_s
+    "Name : #{name} Age: #{age}"
+  end
+
+  def <=> other
+    self.age <=> other.age
+  end
+end
+
+
+class People
+  include Enumerable
+
+  def initialize
+    @list =[]
+  end
+
+  def << item
+    @list << item
+  end
+
+  def each(&block)
+    @list.each(&block)
+  end
+
+end
+
+p1 = Person.new 30, "Tayfun"
+p2 = Person.new 25, "Ahmet"
+p3 = Person.new 28, "Mehmet"
+p4 = Person.new 27, "Demet"
+
+people = People.new
+
+people << p1 << p2 << p3 << p4
+
+# people.each {|p| puts "Name : #{p.name}, Age: #{p.age}"}
+
+# sorted = people.sort {|x,y| x.age <=> y.age}
+
+# sorted.each {|p| puts "Name : #{p.name}, Age: #{p.age}"}
+
+# people.select{|p| p.name[-3..-1] == 'met'}
+
+p people.group_by {|p| p.name[-3..-1]}
+p people.max_by {|p| p.age}
+
+p people.max
+
+</span>
+</div>
+
+						</code></pre></div>
+
 
 </section>
 
@@ -1031,21 +1161,6 @@ bundle install
 
 						</section>
 
-
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						<a href="?theme=sky#/themes">Sky</a> -
-						<a href="?theme=beige#/themes">Beige</a> -
-						<a href="?theme=simple#/themes">Simple</a> -
-						<a href="?theme=serif#/themes">Serif</a> -
-						<a href="?theme=night#/themes">Night</a> -
-						<a href="?#/themes">Default</a>
-					</p>
-					<p>
-
-					</p>
-				</section>
 
 				<section id="End">
 					<h1>THE END</h1>
