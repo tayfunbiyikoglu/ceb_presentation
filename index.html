@@ -393,8 +393,17 @@ puts "I own #{num_of_books} books."
 						<div class="fragment">
 						<pre><code class = "ruby"  contenteditable style="font-size: 18px; margin-top: 20px;">
 4.times { |i| puts "Happy Birthday #{i == 2 ? "dear NAME" : "to You"}" }
+
+4.times do  |i|
+	puts "Happy Birthday #{i == 2 ? "dear NAME" : "to You"}"
+end
 <div class="float_right"><span class="clippy ">
-						4.times { |i| puts "Happy Birthday #{i == 2 ? "dear NAME" : "to You"}" }</span>
+						4.times { |i| puts "Happy Birthday #{i == 2 ? "dear NAME" : "to You"}" }
+
+4.times do  |i|
+	puts "Happy Birthday #{i == 2 ? "dear NAME" : "to You"}"
+end
+					</span>
 </div>
 						</code></pre>
 
@@ -402,7 +411,7 @@ puts "I own #{num_of_books} books."
 						</section>
 
 <section id="Default-arguments">
-<p class="heading">Default Arguments</p>
+<p class="heading">Default/Optional Arguments</p>
 					<div class="fragment">
 						<pre><code class = "ruby" contenteditable style="font-size: 18px; margin-top: 20px;">
 def greatest_club(param = "Besiktas")
@@ -448,7 +457,7 @@ greates_clubs "BJK","Galatasaray","Fenerbahce"
 						</section>
 
 
-<section id="No-overflow">
+<!-- <section id="No-overflow">
 <p class="heading">No overflow in Ruby</p>
 					<div class="fragment">
 						<pre><code class = "ruby" contenteditable style="font-size: 18px; margin-top: 20px;">
@@ -471,6 +480,59 @@ end
 						</code></pre></div>
 
 						</section>
+ -->
+
+<section id="Powerful-api">
+
+	<p class="heading">Powerful Api </p>
+<p>Date</p>
+<div class="fragment">
+						<pre><code class = "java" contenteditable style="font-size: 18px; margin-top: 20px;">int year = CBSystem.getInstance().getProcessDate().getYear()- 1;
+CBDate startOfYear = CBDateFactory.newCBDate(year, 1, 1);
+CBDate endOfYear = CBDateFactory.newCBDate(year, 12, 31);
+
+public static final List<String> QUARTERS = Arrays.asList(new String[]{"1231","0331","0630","0930"});
+
+QUARTERS.contains(endDate.toDBString().substring(4)));
+</code></pre></div>
+
+<div class="fragment">
+						<pre><code class = "ruby" contenteditable style="font-size: 18px; margin-top: 20px;">d = Date.new(2013,4,19)
+
+puts d.prev_year.beginning_of_year
+puts d.prev_year.end_of_year
+puts d.next_month
+puts d.beginning_of_year
+puts d.yesterday
+puts d.next_week(:saturday)
+
+puts d.beginning_of_quarter
+
+puts d.years_ago(2)
+puts d.years_since(2)
+
+puts d.advance(years: 1, weeks: 2)
+<div class="float_right"><span class="clippy ">
+require 'active_support/core_ext'
+d = Date.new(2013,4,19)
+
+puts d.prev_year.beginning_of_year
+puts d.prev_year.end_of_year
+puts d.next_month
+puts d.beginning_of_year
+puts d.yesterday
+puts d.next_week(:saturday)
+
+puts d.beginning_of_quarter
+
+puts d.years_ago(2)
+puts d.years_since(2)
+
+puts d.advance(years: 1, weeks: 2)
+</span>
+</div>
+</code></pre></div>
+</section>
 
 <section id="Ranges">
 <p class="heading">Ranges</p>
@@ -861,20 +923,20 @@ end
 
 p ar
 p ar.sort
-# p ar.sort {|x,y| x.length <=> y.length}
+p ar.sort {|x,y| x.length <=> y.length}
 
-# p ar.partition {|e| e.length > 4}
+p ar.partition {|e| e.length > 4}
 
-# p ar.group_by {|e| e[0]}
+p ar.group_by {|e| e[0]}
 
-# p ar.all? {|e| e.length >1}
-# p ar.any? {|e| e.length >3}
+p ar.all? {|e| e.length >1}
+p ar.any? {|e| e.length >3}
 
-# p ar.each_cons(2) {|e| p e}
+p ar.each_cons(2) {|e| p e}
 
-# ar2 = ar.select {|e| e[0] == 'e'}
+ar2 = ar.select {|e| e[0] == 'e'}
 
-# p ar2
+p ar2
 
 <div class="float_right"><span class="clippy ">
  ar = %w(elma armut muz portakal erik)
@@ -950,13 +1012,13 @@ people = People.new
 
 people << p1 << p2 << p3 << p4
 
-# people.each {|p| puts "Name : #{p.name}, Age: #{p.age}"}
+people.each {|p| puts "Name : #{p.name}, Age: #{p.age}"}
 
-# sorted = people.sort {|x,y| x.age <=> y.age}
+sorted = people.sort {|x,y| x.age <=> y.age}
 
-# sorted.each {|p| puts "Name : #{p.name}, Age: #{p.age}"}
+sorted.each {|p| puts "Name : #{p.name}, Age: #{p.age}"}
 
-# people.select{|p| p.name[-3..-1] == 'met'}
+people.select{|p| p.name[-3..-1] == 'met'}
 
 p people.group_by {|p| p.name[-3..-1]}
 p people.max_by {|p| p.age}
@@ -1152,14 +1214,14 @@ gem 'rspec', :require => 'spec'
 
 </code></pre>
 <div class="fragment">
-					<pre>
-
-<code class = "ruby" contenteditable style="font-size: 18px; margin-top: 0px;">source 'https://rubygems.org'
-bundle install
-</code></pre>
-
-
 						</section>
+
+				<section id="Rails-Intro">
+					<p class="heading">Rails Demo</p>
+
+					<h4>Hopefully we have time for a rails demo</h4>
+					<br>
+				</section>
 
 
 				<section id="End">
